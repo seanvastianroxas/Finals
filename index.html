@@ -7,6 +7,9 @@
     <script>
 
  function validate(){
+
+
+
   var fname = document.getElementById("fname").value;
   var mname = document.getElementById("mname").value;
   var lname = document.getElementById("lname").value;
@@ -39,6 +42,10 @@
   }
   if(email.indexOf("@") == -1 || email.length < 5){
     alert("Please Enter correct email");
+    return false;
+  }
+    if(user.length < 5){
+    alert("username should not be less than 5 characters");
     return false;
   }
   if(pass.length < 5){
