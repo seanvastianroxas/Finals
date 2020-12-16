@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+
+ function validate(){
+  var fname = document.getElementById("fname").value;
+  var mname = document.getElementById("mname").value;
+  var lname = document.getElementById("lname").value;
+  
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+  var user = document.getElementById("user").value;
+  var pass = document.getElementById("pass").value;
+  var cpass = document.getElementById("cpass").value;
+  
+/* conditions */
+
+  if(fname.length < 5){
+    alert("Please Enter valid first Name");
+    return false;
+  }
+  if(mname.length < 5){
+    alert("Please Enter valid middle Name");
+    return false;
+  }
+  if(lname.length < 5){
+    alert("Please Enter valid last Name");
+    
+    return false;
+  }
+  
+  if(phone.length != 11){
+    alert("Please Enter correct phone number");
+    return false;
+  }
+  if(email.indexOf("@") == -1 || email.length < 5){
+    alert("Please Enter correct email");
+    return false;
+  }
+  if(pass.length < 5){
+    alert("password should not be less than 5 characters");
+    return false;
+  }
+  if(pass != cpass){
+    alert("Password should match");
+    return false;
+  }
+  
+
+  document.write("Sucessfully submitted, ");
+  return true;
+  
+}
+    </script>
+</head>
+<body>
+
+    
+        <h1> FILL UP THE FORM BELOW AND CLICK ON THE REGISTER BUTTON </h1>
+    
+
+    <div class="regis">
+  <div id="error_message">
+     
+  </div>
+  <form action="" id="myform" onsubmit = "return validate();">
+
+    <div class="input_field">
+        <input type="text" placeholder="First Name" id="fname">
+    </div>
+
+    <div class="input_field">
+        <input type="text" placeholder="Middle Name" id="mname">
+    </div>
+
+    <div class="input_field">
+        <input type="text" placeholder="Last Name" id="lname">
+    </div>
+
+    <div class="input_field">
+        <input type="number" placeholder="Phone" id="phone">
+    </div>
+
+    <div class="input_field">
+        <input type="text" placeholder="Email" id="email">
+    </div>
+
+    <div class="input_field">
+        <input type="text" placeholder="Username" id="user">
+    </div>
+
+    <div class="input_field">
+        <input type="password" placeholder="Password" id="pass">
+    </div>
+
+    <div class="input_field">
+        <input type="password" placeholder="Confirm Password" id="cpass">
+    </div>
+    
+    <div class="btn">
+        <input type="submit" value = "Register">
+    </div>
+  </form>
+</div>
+    
+</body>
